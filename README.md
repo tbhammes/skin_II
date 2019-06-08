@@ -10,3 +10,5 @@ conductive thread (Shieldex/Stratex - Silver/Cotton - <200 ohms/inch) //
 one zipper // 
 3.7 volt battery // 
 lilypad simple board // 
+
+Zipper potentiometer (https://www.kobakant.at/DIY/?p=2627) is embedded in coat and connected to an analog pin which activates the leds on the coat. 
