@@ -1,0 +1,52 @@
+/*
+  AnalogReadSerial
+
+  Reads an analog input on pin 0, prints the result to the Serial Monitor.
+  Graphical representation is available using Serial Plotter (Tools > Serial Plotter menu).
+  Attach the center pin of a potentiometer to pin analog, and the outside pins to +5V and ground.
+
+  This example code is in the public domain.
+
+  http://www.arduino.cc/en/Tutorial/AnalogReadSerial
+  
+  edited by taylor hammes
+  skin II final e-textile project
+  
+  one or two potentiometers which activate leds
+  
+*/
+
+//int sensor1 = A2; // sensor is connected to analog pin 2
+int sensor2 = A3;
+//int led1 = 10; // led connected to digital pin 6
+int led2 = 11;
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  //  // hack the code, by using the Arduino onboard pullup resistor as a voltage divider for the sensor
+  //  pinMode(sensor, INPUT_PULLUP);
+  //  pinMode(led1, OUTPUT); // initialize digital pin 6 as an output
+  pinMode(led2, OUTPUT);
+
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input on analog pin 2:
+  //  int sensorValue1 = analogRead(sensor1);
+  int sensorValue2 = analogRead(sensor2);
+
+  // print out the value you read:
+  //  Serial.print(sensorValue1);
+  //  delay(100);        // delay in between reads for stability
+  //  Serial.print("     ");
+  Serial.println(sensorValue2);
+  delay(100);        // delay in between reads for stability
+
+  //  int brightness1 = map(sensorValue1, 0, 1023, 0, 255); // mapping the sensor values to a pwm value range
+  //  analogWrite(led1, brightness1); // pwm value to set the brightness of the led
+
+  int brightness2 = map(sensorValue2, 1025, 100, 0, 255); // mapping the sensor values to a pwm value range
+  analogWrite(led2, brightness2); // pwm value to set the brightness of
